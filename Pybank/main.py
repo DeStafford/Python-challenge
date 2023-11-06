@@ -20,11 +20,8 @@ with open(CSV_PATH, encoding='UTF-8') as csvfile:
     #skip the row heder
     header = next(csvreader)
     
-
-    #not required
-    #date_list = [] 
     
-    # Loop through looking for the video
+    # Loop through changes in the P/L
     for row in csvreader:
        #print(f'Date: {row[0]}, P&L: {row[1]}')
        counter = counter + 1
@@ -40,19 +37,18 @@ with open(CSV_PATH, encoding='UTF-8') as csvfile:
                Min_ = change_PL
                Min_Month = row[0]
        Previous_PL = int(row[1])
-
-            
-
-
-       #not required just example when to use len function on a list
-       #date_list.append(row[0])
+               
+#average of those changes        
 average_change = Total_Changes/(counter-1)
        
+print(f'Financial Analysis')
+print(f'-------------------------')
 print(f'Total Months: {counter}')
 print(f'Total P&L: {total_pl}')
 print(f'Average Change:{average_change}') 
 print(f'Greatest Increase in Profits:{Max_Increase},{Max_Month}')
 print(f'Greatest Decrease in Profits:{Min_}, {Min_Month}')
+
 
 
 

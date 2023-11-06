@@ -54,6 +54,7 @@ for candidate, percentage in percentages.items():
 winner = max(percentages, key=percentages.get)
 print(f'-------------------------')
 print(f'Winner: {winner}')
+print(f'-------------------------')
     
                                 
         
