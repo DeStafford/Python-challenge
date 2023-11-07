@@ -3,8 +3,8 @@ import csv
 
 # Set path for file
 CSV_PATH = os.path.join("Resources", "budget_data.csv")
-
-os.chdir(os.path.dirname(os.path.realpath(__file__)))
+analysis_PATH = os.path.join("analysis", "analysis.txt")
+#os.chdir(os.path.dirname(os.path.realpath(__file__)))
 counter = 0
 total_pl = 0
 Total_Changes = 0
@@ -46,11 +46,20 @@ print(f'-------------------------')
 print(f'Total Months: {counter}')
 print(f'Total P&L: {total_pl}')
 print(f'Average Change:{average_change}') 
-print(f'Greatest Increase in Profits:{Max_Increase},{Max_Month}')
-print(f'Greatest Decrease in Profits:{Min_}, {Min_Month}')
+print(f'Greatest Increase in Profits:{Max_Month}(${Max_Increase})')
+print(f'Greatest Decrease in Profits:{Min_Month} (${Min_})')
 
+analysis_PATH = os.path.join("analysis", "analysis.txt")
 
-
+with open(analysis_PATH, 'w') as textfile:
+    
+    textfile.write(f'Financial Analysis\n')
+    textfile.write(f'-------------------------\n')
+    textfile.write(f'Total Months: {counter}\n')
+    textfile.write(f'Total P&L: {total_pl}\n')
+    textfile.write(f'Average Change:{average_change}\n')      
+    textfile.write(f'Greatest Increase in Profits:{Max_Month}(${Max_Increase})\n')
+    textfile.write(f'Greatest Decrease in Profits:{Min_Month} (${Min_})')
 
 
 
