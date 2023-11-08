@@ -3,8 +3,9 @@ import csv
 
 # Set path for file
 CSV_PATH = os.path.join("Resources", "budget_data.csv")
-analysis_PATH = os.path.join("analysis", "analysis.txt")
-#os.chdir(os.path.dirname(os.path.realpath(__file__)))
+analysis_PATH = os.path.join("/analysis", "analysis.txt")
+
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 counter = 0
 total_pl = 0
 Total_Changes = 0
@@ -52,7 +53,7 @@ print(f'Greatest Decrease in Profits:{Min_Month} (${Min_})')
 analysis_PATH = os.path.join("analysis", "analysis.txt")
 
 with open(analysis_PATH, 'w') as textfile:
-    
+#header, total amt, total, average change, increase, decrease
     textfile.write(f'Financial Analysis\n')
     textfile.write(f'-------------------------\n')
     textfile.write(f'Total Months: {counter}\n')

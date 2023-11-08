@@ -23,7 +23,7 @@ with open(csvpath, encoding='UTF-8') as csvfile:
         total_votes += 1
         candidate_name = row[2] 
 
-#update directory 
+#directory for number of votes for each candidate received 
         if candidate_name in candidate_votes:
             candidate_votes[candidate_name] += 1 
         else:
@@ -35,7 +35,7 @@ with open(textpath,'w', encoding='UTF-8') as textfile:
     print(f'-------------------------')
     print(f'Total Votes: {total_votes}')
     print(f'-------------------------')
-
+    
     textfile.write(f'Election Results\n')
     textfile.write(f'-------------------------\n')
     textfile.write(f'Total Votes: {total_votes}\n')
